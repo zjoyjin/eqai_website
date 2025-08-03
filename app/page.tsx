@@ -2,8 +2,9 @@
 
 import Link from 'next/link';
 import { useLanguage } from '../contexts/LanguageContext';
+import styles from './HomePage.module.css';
 import React from 'react';
-
+import Header from './components/Header';
 
 export default function HomePage() {
   const { t } = useLanguage();
@@ -36,29 +37,27 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center justify-center px-6">
+    <div className={styles.container}>
       {/* Hero Section */}
-      <div className="text-center mb-12">
-        <h1 className="text-7xl font-light text-gray-900 mb-4 tracking-tight">
+      <div className={styles.hero}>
+        <h1 className={styles.title}>
           {t('home.title')}
         </h1>
-        <p className="text-xl text-gray-600 font-light">
+        <p className={styles.tagline}>
           {t('home.tagline')}
         </p>
       </div>
 
       {/* Category Cards */}
-      <div className="grid grid-cols-2 gap-8 max-w-md">
+      <div className={styles.categoriesGrid}>
         {categories.map((category) => (
-          <Link key={category.key} href={category.href}>
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-200 cursor-pointer">
-              <div className="text-5xl mb-4">
-                {category.emoji}
-              </div>
-              <h3 className="text-lg font-medium text-gray-900">
-                {category.title}
-              </h3>
-            </div>
+          <Link key={category.key} href={category.href} className={styles.categoryCard}>
+            <span className={styles.categoryEmoji}>
+              {category.emoji}
+            </span>
+            <h3 className={styles.categoryTitle}>
+              {category.title}
+            </h3>
           </Link>
         ))}
       </div>
