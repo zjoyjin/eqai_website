@@ -1,23 +1,20 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import React from 'react';
-import './global.css';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import { LanguageProvider } from '../contexts/LanguageContext'; // ✅ Correct import
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import './globals.css'
+import { LanguageProvider } from '../contexts/LanguageContext'
+import Layout from '../components/Layout'
+import React from 'react'
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'EQAIGlobal - Connecting Life with Simplicity',
-  description:
-    'Discover solutions for kids, yourself, work, and pets. Making life simpler through technology.',
+  description: 'Discover solutions for kids, yourself, work, and pets. Making life simpler through technology.',
   keywords: 'AI, lifestyle, kids, work, pets, wellness, productivity',
   authors: [{ name: 'EQAIGlobal' }],
   openGraph: {
     title: 'EQAIGlobal - Connecting Life with Simplicity',
-    description:
-      'Discover solutions for kids, yourself, work, and pets. Making life simpler through technology.',
+    description: 'Discover solutions for kids, yourself, work, and pets. Making life simpler through technology.',
     url: 'https://eqaiglobal.com',
     siteName: 'EQAIGlobal',
     locale: 'en_US',
@@ -28,24 +25,39 @@ export const metadata: Metadata = {
     title: 'EQAIGlobal - Connecting Life with Simplicity',
     description: 'Discover solutions for kids, yourself, work, and pets.',
   },
-};
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} min-h-screen bg-white`}>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <meta name="theme-color" content="#ffffff" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
+      <body className={inter.className}>
         <LanguageProvider>
-          <div className="flex flex-col min-h-screen">
-            <Header />
-            <main className="flex-grow">{children}</main>
-            <Footer />
-          </div>
+          <Layout>
+            {children}
+          </Layout>
         </LanguageProvider>
       </body>
     </html>
-  );
+  )
 }

@@ -2,9 +2,7 @@
 
 import Link from 'next/link';
 import { useLanguage } from '../contexts/LanguageContext';
-import styles from './HomePage.module.css';
 import React from 'react';
-import Header from './components/Header';
 
 export default function HomePage() {
   const { t } = useLanguage();
@@ -37,25 +35,25 @@ export default function HomePage() {
   ];
 
   return (
-    <div className={styles.container}>
+    <div className="homepage">
       {/* Hero Section */}
-      <div className={styles.hero}>
-        <h1 className={styles.title}>
+      <div className="hero">
+        <h1 className="hero-title">
           {t('home.title')}
         </h1>
-        <p className={styles.tagline}>
+        <p className="hero-tagline">
           {t('home.tagline')}
         </p>
       </div>
 
       {/* Category Cards */}
-      <div className={styles.categoriesGrid}>
+      <div className="categories-grid">
         {categories.map((category) => (
-          <Link key={category.key} href={category.href} className={styles.categoryCard}>
-            <span className={styles.categoryEmoji}>
+          <Link key={category.key} href={category.href} className="category-card">
+            <span className="category-emoji">
               {category.emoji}
             </span>
-            <h3 className={styles.categoryTitle}>
+            <h3 className="category-title">
               {category.title}
             </h3>
           </Link>
