@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from 'react';
 
 // Color palette options
@@ -189,8 +190,11 @@ export default function PlayfulPetPage() {
             transitionDelay: '0.6s',
             color: '#6b7280'
           }}>
-            Get personalized care recommendations for your pet in minutes
-          </p>
+Your pets deserve the best care possible. Our platform offers expert guidance on pet health, nutrition, and general wellbeing.
+
+From training tips to health monitoring, we provide practical advice to help you build a stronger bond with your furry friends.
+
+Whether you're a new pet owner or an experienced caregiver, our resources will help you provide the love and care your pets deserve.          </p>
 
           {/* CTA Button */}
           <div className={`
