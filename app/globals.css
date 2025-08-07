@@ -356,3 +356,103 @@ body {
   left: 10%;
   /* animation-delay: ... (add your value here if needed) */
 }
+
+
+ /*Pet page css style*/
+ /* Pet Care Page Custom Styles */
+
+/* Custom keyframe animations */
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-20px); 
+  }
+}
+
+@keyframes gentleBob {
+  0%, 100% { 
+    transform: translateY(0px) rotate(12deg); 
+  }
+  50% { 
+    transform: translateY(-5px) rotate(15deg); 
+  }
+}
+
+@keyframes wiggle {
+  0%, 7%, 14%, 21%, 28%, 35%, 42%, 49%, 56%, 63%, 70%, 77%, 84%, 91%, 98%, 100% {
+    transform: translateX(0px);
+  }
+  3.5%, 10.5%, 17.5%, 24.5%, 31.5%, 38.5%, 45.5%, 52.5%, 59.5%, 66.5%, 73.5%, 80.5%, 87.5%, 94.5% {
+    transform: translateX(-2px);
+  }
+  7%, 14%, 21%, 28%, 35%, 42%, 49%, 56%, 63%, 70%, 77%, 84%, 91%, 98% {
+    transform: translateX(2px);
+  }
+}
+
+/* Custom utility classes */
+.animate-wiggle {
+  animation: wiggle 0.6s ease-in-out;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-gentle-bob {
+  animation: gentleBob 3s ease-in-out infinite;
+}
+
+/* Custom color palette utilities - add to Tailwind if needed */
+.bg-mint-50 { background-color: #f0fdf4; }
+.bg-mint-400 { background-color: #34d399; }
+.bg-mint-500 { background-color: #10b981; }
+.text-mint-400 { color: #34d399; }
+
+.bg-peach-50 { background-color: #fff7ed; }
+.bg-peach-400 { background-color: #fb923c; }
+.bg-peach-500 { color: #f97316; }
+
+.bg-lavender-50 { background-color: #faf5ff; }
+.bg-lavender-400 { background-color: #a855f7; }
+.bg-lavender-500 { background-color: #9333ea; }
+
+/* Gradient backgrounds for different palettes */
+.bg-gradient-mint-blush {
+  background: linear-gradient(135deg, #f0fdf4 0%, #fdf2f8 100%);
+}
+
+.bg-gradient-warm-peach {
+  background: linear-gradient(135deg, #fff7ed 0%, #fffbeb 100%);
+}
+
+.bg-gradient-lavender-cream {
+  background: linear-gradient(135deg, #faf5ff 0%, #eff6ff 100%);
+}
+
+/* Button gradient backgrounds */
+.btn-gradient-mint {
+  background: linear-gradient(135deg, #34d399, #10b981);
+}
+
+.btn-gradient-peach {
+  background: linear-gradient(135deg, #fb923c, #f97316);
+}
+
+.btn-gradient-lavender {
+  background: linear-gradient(135deg, #a855f7, #9333ea);
+}
+
+/* Glassmorphism card effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Rounded font family for friendly feel */
+.font-rounded {
+  font-family: ui-rounded, 'SF Pro Rounded', system-ui, -apple-system, sans-serif;
+}
