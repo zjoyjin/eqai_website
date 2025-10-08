@@ -134,7 +134,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={inter.variable}>
-      <body className="bg-white text-neutral-900">{/* prettier-ignore */}
+      <body className="flex min-h-screen flex-col bg-white text-neutral-900">{/* prettier-ignore */}
 
         <script
           type="application/ld+json"
@@ -150,13 +150,11 @@ export default async function LocaleLayout({
             {locale === 'zh' ? '跳到主要内容' : 'Skip to main content'}
           </a>
 
-          <div className="mx-auto max-w-screen-xl px-6 md:px-8">
-            <Header locale={locale} />
+          <Header locale={locale} />
 
-            {children}
+          {children}
 
-            <Footer locale={locale} />
-          </div>
+          <Footer locale={locale} />
         </NextIntlClientProvider>
       </body>
     </html>

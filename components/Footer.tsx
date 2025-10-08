@@ -13,20 +13,22 @@ export default function Footer({ locale }: { locale: string }) {
   ];
 
   return (
-    <footer className="py-10 text-sm text-neutral-500">
-      <div className="flex flex-wrap items-center justify-between gap-6">
-        <div>{t('footer.copyright')}</div>
-        <nav className="flex flex-wrap gap-6" aria-label="Footer navigation">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="hover:underline"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+    <footer className="border-t border-neutral-100 mt-auto">
+      <div className="mx-auto max-w-screen-xl px-6 py-10 md:px-8">
+        <div className="flex flex-wrap items-center justify-between gap-6 text-sm text-neutral-500">
+          <div>{t('footer.copyright')}</div>
+          <nav className="flex flex-wrap gap-6" aria-label="Footer navigation">
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="hover:underline"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
       </div>
     </footer>
   );
