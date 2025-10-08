@@ -134,7 +134,21 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={inter.variable}>
-      <body className="min-h-screen flex flex-col">
+      <body className="min-h-screen flex flex-col" style={{margin: 0, padding: 0, fontFamily: 'system-ui, sans-serif'}}>
+        <noscript>
+          <div style={{
+            padding: '40px',
+            textAlign: 'center',
+            fontSize: '18px',
+            backgroundColor: '#fff3cd',
+            border: '2px solid #ffc107',
+            margin: '20px'
+          }}>
+            <h1>JavaScript Required</h1>
+            <p>Please enable JavaScript to view this website properly.</p>
+          </div>
+        </noscript>
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
@@ -144,25 +158,19 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
 
-        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white">
-          {locale === 'zh' ? '跳到主要内容' : 'Skip to main content'}
-        </a>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white">
+            {locale === 'zh' ? '跳到主要内容' : 'Skip to main content'}
+          </a>
 
-        {messages ? (
-          <NextIntlClientProvider locale={locale} messages={messages}>
-            <Header locale={locale} />
-            <main id="main-content" className="flex-1">
-              {children}
-            </main>
-            <Footer locale={locale} />
-          </NextIntlClientProvider>
-        ) : (
-          <>
-            <main id="main-content" className="flex-1">
-              {children}
-            </main>
-          </>
-        )}
+          <Header locale={locale} />
+
+          <main id="main-content" className="flex-1">
+            {children}
+          </main>
+
+          <Footer locale={locale} />
+        </NextIntlClientProvider>
       </body>
     </html>
   );
