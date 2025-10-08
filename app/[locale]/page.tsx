@@ -66,7 +66,17 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
 
       <div className="flex min-h-[calc(100vh-8rem)] flex-col items-center justify-center px-4 py-16 sm:px-6 lg:px-8">
         {/* Temporary SSR Probe - REMOVE AFTER VERCEL VALIDATION */}
-        <h1 className="mb-8 text-2xl font-bold text-green-600">✅ SSR OK - {locale}</h1>
+        <div style={{
+          padding: '20px',
+          margin: '20px',
+          border: '3px solid green',
+          backgroundColor: '#e8f5e9',
+          fontSize: '24px',
+          fontWeight: 'bold',
+          textAlign: 'center',
+        }}>
+          ✅ SSR WORKING - Locale: {locale}
+        </div>
 
         {/* Hero Section */}
         <div className="mb-16 max-w-2xl text-center">
