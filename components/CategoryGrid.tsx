@@ -14,7 +14,7 @@ interface CategoryGridProps {
 
 export default function CategoryGrid({ categories, locale }: CategoryGridProps) {
   return (
-    <div className="mx-auto grid w-full max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 md:gap-8">
+    <div className="mx-auto grid w-full max-w-4xl grid-cols-1 gap-8 sm:grid-cols-2">
       {categories.map((category) => (
         <CategoryCard
           key={category.key}
