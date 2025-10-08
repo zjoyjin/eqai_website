@@ -2,6 +2,8 @@ import { useTranslations } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { generateJsonLd } from '@/lib/utils';
 import CategoryGrid from '@/components/CategoryGrid';
+import CategoryCard from '@/components/CategoryCard';
+import { Baby, PawPrint, UserRound, BriefcaseBusiness } from 'lucide-react';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
   const t = await getTranslations({ locale, namespace: 'home' });
@@ -60,23 +62,46 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
 
-      <div className="mx-auto max-w-6xl px-6 py-20 md:px-8 md:py-32">
-        {/* Hero Section */}
-        <div className="mb-20 text-center md:mb-24">
-          <p className="mb-5 text-sm font-medium uppercase tracking-wider text-gray-500">
-            {locale === 'zh' ? '情商 × 人工智能' : 'Emotional Intelligence × AI'}
-          </p>
-          <h1 className="mb-6 text-5xl font-semibold leading-tight tracking-tight text-gray-900 md:text-6xl lg:text-7xl">
-            {t('home.title')}
-          </h1>
-          <p className="mx-auto max-w-2xl text-lg leading-relaxed text-gray-600 md:text-xl">
-            {t('home.tagline')}
-          </p>
-        </div>
+      <main id="main-content" className="py-16 md:py-24">
+        <p className="text-sm font-medium text-blue-700">
+          {locale === 'zh' ? '情商 × 人工智能' : 'Emotional Intelligence × AI'}
+        </p>
+        <h1 className="mt-2 text-4xl font-semibold tracking-tight md:text-5xl">
+          {t('home.title')}
+        </h1>
+        <p className="mt-3 max-w-2xl text-base text-neutral-600 md:text-lg">
+          {t('home.tagline')}
+        </p>
 
-        {/* Category Grid */}
-        <CategoryGrid categories={categories} locale={locale} />
-      </div>
+        <div className="mt-10 md:mt-14">
+          <CategoryGrid>
+            <CategoryCard
+              href={`/${locale}/kids`}
+              title={t('category.kids.title')}
+              description={t('category.kids.subtitle')}
+              icon={<Baby aria-hidden="true" className="h-5 w-5" />}
+            />
+            <CategoryCard
+              href={`/${locale}/pets`}
+              title={t('category.pets.title')}
+              description={t('category.pets.subtitle')}
+              icon={<PawPrint aria-hidden="true" className="h-5 w-5" />}
+            />
+            <CategoryCard
+              href={`/${locale}/self`}
+              title={t('category.self.title')}
+              description={t('category.self.subtitle')}
+              icon={<UserRound aria-hidden="true" className="h-5 w-5" />}
+            />
+            <CategoryCard
+              href={`/${locale}/work`}
+              title={t('category.work.title')}
+              description={t('category.work.subtitle')}
+              icon={<BriefcaseBusiness aria-hidden="true" className="h-5 w-5" />}
+            />
+          </CategoryGrid>
+        </div>
+      </main>
     </>
   );
 }

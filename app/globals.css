@@ -53,11 +53,8 @@
 
   html,
   body {
-    background: var(--bg);
-    color: var(--fg);
+    height: 100%;
     font-family: var(--font-sans);
-    line-height: 1.6;
-    min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -74,11 +71,9 @@
   }
 
   /* Focus ring for accessibility */
-  .focus-ring:focus-visible,
-  *:focus-visible {
-    outline: 3px solid var(--ring);
+  :focus-visible {
+    outline: 3px solid #1a73e8;
     outline-offset: 3px;
-    border-radius: calc(var(--radius) - 2px);
   }
 
   /* Skip link for accessibility */

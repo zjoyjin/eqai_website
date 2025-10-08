@@ -41,46 +41,31 @@ export default function KidsPage({ params: { locale } }: { params: { locale: str
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
-      <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
-        {/* Back Link */}
-        <Link
-          href={`/${locale}`}
-          className="mb-8 inline-flex items-center gap-2 text-sm text-neutral-600 transition-colors hover:text-neutral-900 focus-visible:outline-none focus-visible:underline"
-        >
-          <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-          {t('button.back_home')}
-        </Link>
-
-        {/* Hero */}
-        <div className="mb-16 text-center">
-          <span className="mb-6 inline-block text-7xl" role="img" aria-label={t('category.kids.title')}>
-            {t('category.kids.emoji')}
-          </span>
-          <h1 className="mb-4 text-5xl font-normal text-neutral-900">
-            {t('category.kids.title')}
-          </h1>
-          <p className="text-xl text-neutral-600">
-            {t('category.kids.description')}
-          </p>
-        </div>
-
-        {/* Content */}
-        <div className="mb-12 space-y-6 text-center text-lg leading-relaxed text-neutral-700">
-          <p>{t('page.kids.content1')}</p>
-          <p>{t('page.kids.content2')}</p>
-          <p>{t('page.kids.content3')}</p>
-        </div>
-
-        {/* Assessment CTA */}
-        <div className="flex justify-center">
-          <Link
-            href={`/${locale}/kids/assessment`}
-            className="inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-white px-8 py-3 text-base font-medium text-neutral-700 shadow-sm transition-all hover:border-neutral-400 hover:shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2"
-          >
-            {locale === 'zh' ? '评估（即将推出）' : 'Assessment (Coming Soon)'}
+      <main id="main-content" className="py-16 md:py-24">
+        <nav className="mb-6 text-sm text-neutral-500">
+          <Link href={`/${locale}`} className="hover:underline">
+            {t('nav.home')}
           </Link>
+          {' / '}
+          {t('category.kids.title')}
+        </nav>
+
+        <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
+          {t('category.kids.title')}
+        </h1>
+        <p className="mt-2 max-w-2xl text-neutral-600">
+          {t('category.kids.description')}
+        </p>
+
+        <div className="mt-8 rounded-xl border border-neutral-200 p-6">
+          <button
+            className="rounded-lg bg-neutral-900 px-4 py-2 text-white disabled:opacity-60"
+            disabled
+          >
+            {locale === 'zh' ? '评估（即将推出）' : 'Assessment (coming soon)'}
+          </button>
         </div>
-      </div>
+      </main>
     </>
   );
 }
