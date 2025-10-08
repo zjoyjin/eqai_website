@@ -134,38 +134,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={inter.variable}>
-      <body className="min-h-screen flex flex-col" style={{margin: 0, padding: 0, fontFamily: 'system-ui, sans-serif', backgroundColor: '#ffffff'}}>
-        {/* ABSOLUTE TEST - This should ALWAYS show */}
-        <div style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          padding: '20px',
-          backgroundColor: '#ff0000',
-          color: '#ffffff',
-          fontSize: '24px',
-          fontWeight: 'bold',
-          textAlign: 'center',
-          zIndex: 9999,
-          border: '5px solid yellow'
-        }}>
-          🚨 IF YOU SEE THIS, SSR IS WORKING! Locale: {locale}
-        </div>
-
-        <noscript>
-          <div style={{
-            padding: '40px',
-            textAlign: 'center',
-            fontSize: '18px',
-            backgroundColor: '#fff3cd',
-            border: '2px solid #ffc107',
-            margin: '20px'
-          }}>
-            <h1>JavaScript Required</h1>
-            <p>Please enable JavaScript to view this website properly.</p>
-          </div>
-        </noscript>
+      <body className="min-h-screen flex flex-col">{/* prettier-ignore */}
 
         <script
           type="application/ld+json"

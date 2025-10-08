@@ -13,11 +13,11 @@ export default function Footer({ locale }: { locale: string }) {
   ];
 
   return (
-    <footer className="mt-auto border-t border-neutral-200 bg-neutral-50">
-      <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+    <footer className="mt-auto border-t border-gray-200 bg-white">
+      <div className="mx-auto max-w-screen-xl px-6 py-8 md:px-8">
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           {/* Copyright */}
-          <div className="text-sm text-neutral-600">
+          <div className="text-sm text-gray-600">
             {t('footer.copyright')}
           </div>
 
@@ -27,7 +27,7 @@ export default function Footer({ locale }: { locale: string }) {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-neutral-600 transition-colors hover:text-neutral-900 focus-visible:underline"
+                className="focus-ring text-sm text-gray-600 transition-colors hover:text-gray-900"
               >
                 {link.label}
               </Link>

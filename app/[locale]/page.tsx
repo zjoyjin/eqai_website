@@ -20,28 +20,24 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
     {
       key: 'kids',
       href: `/${locale}/kids`,
-      emoji: t('category.kids.emoji'),
       title: t('category.kids.title'),
       subtitle: t('category.kids.subtitle'),
     },
     {
       key: 'pets',
       href: `/${locale}/pets`,
-      emoji: t('category.pets.emoji'),
       title: t('category.pets.title'),
       subtitle: t('category.pets.subtitle'),
     },
     {
       key: 'self',
       href: `/${locale}/self`,
-      emoji: t('category.self.emoji'),
       title: t('category.self.title'),
       subtitle: t('category.self.subtitle'),
     },
     {
       key: 'work',
       href: `/${locale}/work`,
-      emoji: t('category.work.emoji'),
       title: t('category.work.title'),
       subtitle: t('category.work.subtitle'),
     },
@@ -64,26 +60,16 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
 
-      <div className="flex min-h-[calc(100vh-8rem)] flex-col items-center justify-center px-4 py-16 sm:px-6 lg:px-8">
-        {/* Temporary SSR Probe - REMOVE AFTER VERCEL VALIDATION */}
-        <div style={{
-          padding: '20px',
-          margin: '20px',
-          border: '3px solid green',
-          backgroundColor: '#e8f5e9',
-          fontSize: '24px',
-          fontWeight: 'bold',
-          textAlign: 'center',
-        }}>
-          ✅ SSR WORKING - Locale: {locale}
-        </div>
-
+      <div className="mx-auto max-w-screen-xl px-6 py-16 md:px-8 md:py-24">
         {/* Hero Section */}
-        <div className="mb-16 max-w-2xl text-center">
-          <h1 className="mb-4 text-4xl font-normal tracking-tight text-neutral-900 sm:text-5xl">
+        <div className="mb-16 text-center md:mb-20">
+          <p className="mb-4 text-sm font-medium uppercase tracking-wide text-gray-500">
+            {locale === 'zh' ? '情商 × 人工智能' : 'Emotional Intelligence × AI'}
+          </p>
+          <h1 className="mb-6 text-4xl font-semibold tracking-tight text-gray-900 md:text-5xl lg:text-6xl">
             {t('home.title')}
           </h1>
-          <p className="text-lg text-neutral-600">
+          <p className="mx-auto max-w-2xl text-base text-gray-600 md:text-lg">
             {t('home.tagline')}
           </p>
         </div>
