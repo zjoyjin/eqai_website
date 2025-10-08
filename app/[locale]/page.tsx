@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { generateJsonLd } from '@/lib/utils';
 import CategoryGrid from '@/components/CategoryGrid';
 
@@ -13,6 +13,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
 }
 
 export default function HomePage({ params: { locale } }: { params: { locale: string } }) {
+  setRequestLocale(locale);
   const t = useTranslations();
 
   const categories = [
@@ -64,6 +65,9 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
       />
 
       <div className="flex min-h-[calc(100vh-8rem)] flex-col items-center justify-center px-4 py-16 sm:px-6 lg:px-8">
+        {/* Temporary SSR Probe - REMOVE AFTER VERCEL VALIDATION */}
+        <h1 className="mb-8 text-2xl font-bold text-green-600">✅ SSR OK - {locale}</h1>
+
         {/* Hero Section */}
         <div className="mb-16 max-w-2xl text-center">
           <h1 className="mb-4 text-4xl font-normal tracking-tight text-neutral-900 sm:text-5xl">

@@ -1,5 +1,5 @@
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, getTranslations } from 'next-intl/server';
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { Inter } from 'next/font/google';
 import { locales } from '@/i18n/request';
@@ -98,15 +98,26 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  const messages = await getMessages();
-  const t = await getTranslations({ locale, namespace: 'meta' });
+  // Enable static rendering
+  setRequestLocale(locale);
 
-  // JSON-LD structured data
+  // Load messages with error handling
+  let messages: any = undefined;
+  let t: any = undefined;
+
+  try {
+    messages = await getMessages();
+    t = await getTranslations({ locale, namespace: 'meta' });
+  } catch (e) {
+    console.error('[layout] Failed to load intl messages:', e);
+  }
+
+  // JSON-LD structured data with fallbacks
   const organizationJsonLd = generateJsonLd('Organization', {
     name: 'EQAIGlobal',
-    url: process.env.NEXT_PUBLIC_SITE_URL,
-    logo: `${process.env.NEXT_PUBLIC_SITE_URL}/logo.png`,
-    description: t('site.description'),
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://eqaiglobal.com',
+    logo: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://eqaiglobal.com'}/logo.png`,
+    description: t?.('site.description') || 'Emotional Intelligence × AI',
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer service',
@@ -115,9 +126,9 @@ export default async function LocaleLayout({
   });
 
   const websiteJsonLd = generateJsonLd('WebSite', {
-    name: t('site.name'),
-    url: `${process.env.NEXT_PUBLIC_SITE_URL}/${locale}`,
-    description: t('site.description'),
+    name: t?.('site.name') || 'EQAIGlobal',
+    url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://eqaiglobal.com'}/${locale}`,
+    description: t?.('site.description') || 'Emotional Intelligence × AI',
     inLanguage: locale === 'zh' ? 'zh-CN' : 'en-US',
   });
 
@@ -133,19 +144,25 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
 
-        <NextIntlClientProvider messages={messages}>
-          <a href="#main-content" className="skip-link">
-            {locale === 'zh' ? '跳到主要内容' : 'Skip to main content'}
-          </a>
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white">
+          {locale === 'zh' ? '跳到主要内容' : 'Skip to main content'}
+        </a>
 
-          <Header locale={locale} />
-
-          <main id="main-content" className="flex-1">
-            {children}
-          </main>
-
-          <Footer locale={locale} />
-        </NextIntlClientProvider>
+        {messages ? (
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            <Header locale={locale} />
+            <main id="main-content" className="flex-1">
+              {children}
+            </main>
+            <Footer locale={locale} />
+          </NextIntlClientProvider>
+        ) : (
+          <>
+            <main id="main-content" className="flex-1">
+              {children}
+            </main>
+          </>
+        )}
       </body>
     </html>
   );
