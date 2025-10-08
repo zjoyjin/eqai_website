@@ -1,5 +1,11 @@
-// This root layout should not be rendered
-// The middleware will redirect / to /en or /zh
-export default function RootLayout() {
-  return null;
+import { ReactNode } from 'react';
+
+export default function RootLayout({ children }: { children: ReactNode }) {
+  return (
+    <html lang="en">
+      <body>
+        {children}
+      </body>
+    </html>
+  );
 }
