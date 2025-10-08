@@ -1,0 +1,16 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow admin/private routes
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+
+# Sitemaps
+Sitemap: https://eqaiglobal.com/sitemap.xml
+Sitemap: https://eqaiglobal.com/sitemap-en.xml
+Sitemap: https://eqaiglobal.com/sitemap-zh.xml
+
+# Crawl-delay for politeness
+Crawl-delay: 1

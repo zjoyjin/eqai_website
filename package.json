@@ -11,11 +11,16 @@
         "eject": "react-scripts eject"
     },
     "dependencies": {
+        "@sanity/client": "^7.12.0",
+        "@sanity/image-url": "^1.2.0",
+        "clsx": "^2.1.1",
         "framer-motion": "^12.23.12",
+        "lucide-react": "^0.545.0",
         "next": "14.2.5",
+        "next-intl": "^4.3.11",
         "react": "^18.0.0",
         "react-dom": "^18.0.0",
-        "shadcn-ui": "^0.9.5"
+        "tailwind-merge": "^3.3.1"
     },
     "devDependencies": {
         "@types/node": "^20",

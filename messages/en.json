@@ -1,0 +1,92 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "language": "中文"
+  },
+  "home": {
+    "title": "EQAIGlobal",
+    "tagline": "Connecting Life with Simplicity",
+    "subtitle": "Discover solutions for every aspect of your life"
+  },
+  "category": {
+    "kids": {
+      "title": "For Kids",
+      "subtitle": "Educational content and safety tips",
+      "emoji": "👶"
+    },
+    "self": {
+      "title": "For Yourself",
+      "subtitle": "Wellness, productivity, and personal growth",
+      "emoji": "🧘"
+    },
+    "work": {
+      "title": "For Work",
+      "subtitle": "Remote tools and professional resources",
+      "emoji": "💼"
+    },
+    "pets": {
+      "title": "For Pets",
+      "subtitle": "Pet care, health, and lifestyle tips",
+      "emoji": "🐾"
+    }
+  },
+  "button": {
+    "learn_more": "Learn More",
+    "back_home": "Back to Home"
+  },
+  "footer": {
+    "copyright": "© 2024 EQAIGlobal. All rights reserved."
+  },
+  "page": {
+    "kids": {
+      "title": "For Kids",
+      "description": "Creating safe and educational experiences for children",
+      "content1": "Our platform provides carefully curated educational content designed to help children learn and grow in a safe digital environment.",
+      "content2": "We focus on age-appropriate materials that promote creativity, critical thinking, and digital literacy while ensuring complete safety and privacy.",
+      "content3": "From interactive learning games to educational videos, we offer resources that make learning fun and engaging for children of all ages."
+    },
+    "self": {
+      "title": "For Yourself",
+      "description": "Tools and resources for personal development and wellness",
+      "content1": "Discover resources designed to help you achieve personal growth, maintain wellness, and improve your overall quality of life.",
+      "content2": "Our curated collection includes mindfulness practices, productivity tools, and lifestyle guidance tailored to your individual needs.",
+      "content3": "Whether you're looking to build new habits, learn new skills, or simply find balance in your daily routine, we have the tools to support your journey."
+    },
+    "work": {
+      "title": "For Work",
+      "description": "Professional tools and resources for modern workplace",
+      "content1": "Enhance your professional capabilities with our comprehensive collection of work-focused tools and resources.",
+      "content2": "From remote collaboration tools to productivity frameworks, we provide everything you need to excel in today's dynamic work environment.",
+      "content3": "Stay ahead of industry trends and develop the skills necessary for career advancement in an increasingly digital workplace."
+    },
+    "pets": {
+      "title": "For Pets",
+      "description": "Comprehensive care guides for your beloved companions",
+      "content1": "Your pets deserve the best care possible. Our platform offers expert guidance on pet health, nutrition, and general wellbeing.",
+      "content2": "From training tips to health monitoring, we provide practical advice to help you build a stronger bond with your furry friends.",
+      "content3": "Whether you're a new pet owner or an experienced caregiver, our resources will help you provide the love and care your pets deserve."
+    }
+  },
+  "meta": {
+    "keywords": {
+      "primary": "emotional intelligence, EQ, AI, artificial intelligence, generative AI",
+      "secondary": "wellness, productivity, education, pet care, work tools"
+    },
+    "site": {
+      "name": "EQAIGlobal",
+      "description": "Emotional intelligence meets artificial intelligence. Discover solutions for kids, yourself, work, and pets. Making life simpler through technology.",
+      "tagline": "Connecting Life with Simplicity"
+    }
+  },
+  "accessibility": {
+    "skip_to_content": "Skip to main content",
+    "menu": "Main navigation menu",
+    "toggle_language": "Switch to Chinese",
+    "close": "Close",
+    "open": "Open"
+  }
+}
