@@ -14,24 +14,28 @@
   },
   "category": {
     "kids": {
-      "title": "为孩子",
-      "subtitle": "教育内容和安全提示",
+      "title": "儿童",
+      "subtitle": "儿童情感成长",
+      "description": "从小培养情商",
       "emoji": "👶"
     },
+    "pets": {
+      "title": "宠物",
+      "subtitle": "理解您的伙伴",
+      "description": "通过情感意识加深联系",
+      "emoji": "🐾"
+    },
     "self": {
-      "title": "为自己",
-      "subtitle": "健康、生产力和个人成长",
+      "title": "自我",
+      "subtitle": "个人发展",
+      "description": "提升情感健康",
       "emoji": "🧘"
     },
     "work": {
-      "title": "为工作",
-      "subtitle": "远程工具和专业资源",
+      "title": "工作",
+      "subtitle": "职业情商",
+      "description": "以同理心和意识引领",
       "emoji": "💼"
-    },
-    "pets": {
-      "title": "为宠物",
-      "subtitle": "宠物护理、健康和生活方式提示",
-      "emoji": "🐾"
     }
   },
   "button": {

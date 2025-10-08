@@ -123,7 +123,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={inter.variable}>
-      <head>
+      <body className="min-h-screen flex flex-col">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
@@ -132,8 +132,7 @@ export default async function LocaleLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
-      </head>
-      <body className="min-h-screen flex flex-col">
+
         <NextIntlClientProvider messages={messages}>
           <a href="#main-content" className="skip-link">
             {locale === 'zh' ? '跳到主要内容' : 'Skip to main content'}

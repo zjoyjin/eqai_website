@@ -25,7 +25,7 @@ export function formatDate(date: string | Date, locale: string = 'en') {
  * Generate JSON-LD structured data for SEO
  */
 export function generateJsonLd(
-  type: 'WebSite' | 'Organization' | 'Article' | 'BreadcrumbList' | 'FAQPage',
+  type: 'WebSite' | 'Organization' | 'Article' | 'BreadcrumbList' | 'FAQPage' | 'ItemList',
   data: Record<string, any>
 ) {
   return {

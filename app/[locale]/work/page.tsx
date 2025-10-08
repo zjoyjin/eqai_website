@@ -27,7 +27,7 @@ export default function WorkPage({ params: { locale } }: { params: { locale: str
       {
         '@type': 'ListItem',
         position: 2,
-        name: t('page.work.title'),
+        name: t('category.work.title'),
         item: `${process.env.NEXT_PUBLIC_SITE_URL}/${locale}/work`,
       },
     ],
@@ -49,22 +49,31 @@ export default function WorkPage({ params: { locale } }: { params: { locale: str
           {t('button.back_home')}
         </Link>
 
-        <div className="mb-12 text-center">
-          <span className="mb-4 inline-block text-6xl" role="img" aria-label={t('page.work.title')}>
+        <div className="mb-16 text-center">
+          <span className="mb-6 inline-block text-7xl" role="img" aria-label={t('category.work.title')}>
             {t('category.work.emoji')}
           </span>
-          <h1 className="mb-4 text-4xl font-bold text-neutral-900 sm:text-5xl">
-            {t('page.work.title')}
+          <h1 className="mb-4 text-5xl font-normal text-neutral-900">
+            {t('category.work.title')}
           </h1>
           <p className="text-xl text-neutral-600">
-            {t('page.work.description')}
+            {t('category.work.description')}
           </p>
         </div>
 
-        <div className="prose prose-lg mx-auto">
+        <div className="mb-12 space-y-6 text-center text-lg leading-relaxed text-neutral-700">
           <p>{t('page.work.content1')}</p>
           <p>{t('page.work.content2')}</p>
           <p>{t('page.work.content3')}</p>
+        </div>
+
+        <div className="flex justify-center">
+          <Link
+            href={`/${locale}/work/assessment`}
+            className="inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-white px-8 py-3 text-base font-medium text-neutral-700 shadow-sm transition-all hover:border-neutral-400 hover:shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2"
+          >
+            {locale === 'zh' ? '评估（即将推出）' : 'Assessment (Coming Soon)'}
+          </Link>
         </div>
       </div>
     </>

@@ -14,24 +14,28 @@
   },
   "category": {
     "kids": {
-      "title": "For Kids",
-      "subtitle": "Educational content and safety tips",
+      "title": "Kids",
+      "subtitle": "Emotional growth for children",
+      "description": "Building emotional intelligence from an early age",
       "emoji": "👶"
     },
+    "pets": {
+      "title": "Pets",
+      "subtitle": "Understanding your companions",
+      "description": "Deepening bonds through emotional awareness",
+      "emoji": "🐾"
+    },
     "self": {
-      "title": "For Yourself",
-      "subtitle": "Wellness, productivity, and personal growth",
+      "title": "Self",
+      "subtitle": "Personal development",
+      "description": "Enhancing your emotional well-being",
       "emoji": "🧘"
     },
     "work": {
-      "title": "For Work",
-      "subtitle": "Remote tools and professional resources",
+      "title": "Work",
+      "subtitle": "Professional emotional intelligence",
+      "description": "Leading with empathy and awareness",
       "emoji": "💼"
-    },
-    "pets": {
-      "title": "For Pets",
-      "subtitle": "Pet care, health, and lifestyle tips",
-      "emoji": "🐾"
     }
   },
   "button": {

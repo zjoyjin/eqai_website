@@ -4,7 +4,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://eqaiglobal.com';
 
   const locales = ['en', 'zh'];
-  const routes = ['', '/kids', '/self', '/work', '/pets', '/about', '/contact', '/privacy', '/terms'];
+  const routes = [
+    '',
+    '/kids',
+    '/kids/assessment',
+    '/self',
+    '/self/assessment',
+    '/work',
+    '/work/assessment',
+    '/pets',
+    '/pets/assessment',
+    '/about',
+    '/contact',
+    '/privacy',
+    '/terms',
+  ];
 
   const sitemap: MetadataRoute.Sitemap = [];
 
@@ -15,7 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url: `${baseUrl}/${locale}${route}`,
         lastModified: new Date(),
         changeFrequency: route === '' ? 'daily' : 'weekly',
-        priority: route === '' ? 1.0 : 0.8,
+        priority: route === '' ? 1.0 : route.includes('/assessment') ? 0.6 : 0.8,
         alternates: {
           languages: {
             en: `${baseUrl}/en${route}`,
