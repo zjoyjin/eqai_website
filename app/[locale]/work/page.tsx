@@ -59,12 +59,13 @@ export default function WorkPage({ params: { locale } }: { params: { locale: str
           </p>
 
           <div className="mt-8 rounded-xl border border-neutral-200 p-6">
-            <button
-              className="rounded-lg bg-neutral-900 px-4 py-2 text-white disabled:opacity-60"
-              disabled
+            <p className="text-neutral-600 mb-4">{t('page.work.content')}</p>
+            <Link
+              href={`/${locale}/work/assessment`}
+              className="inline-block rounded-lg bg-neutral-900 px-4 py-2 text-white hover:bg-neutral-800 transition-colors"
             >
-              {locale === 'zh' ? '评估（即将推出）' : 'Assessment (coming soon)'}
-            </button>
+              {t('assessment.title')}
+            </Link>
           </div>
         </div>
       </main>

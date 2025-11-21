@@ -5,7 +5,7 @@ import { ArrowLeft } from 'lucide-react';
 import { generateJsonLd } from '@/lib/utils';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
-  const t = await getTranslations({ locale, namespace: 'page.pets' });
+  const t = await getTranslations({ locale, namespace: 'page.personal' });
 
   return {
     title: t('title'),
@@ -13,7 +13,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
   };
 }
 
-export default function PetsPage({ params: { locale } }: { params: { locale: string } }) {
+export default function PersonalPage({ params: { locale } }: { params: { locale: string } }) {
   setRequestLocale(locale);
   const t = useTranslations();
 
@@ -28,8 +28,8 @@ export default function PetsPage({ params: { locale } }: { params: { locale: str
       {
         '@type': 'ListItem',
         position: 2,
-        name: t('category.pets.title'),
-        item: `${process.env.NEXT_PUBLIC_SITE_URL}/${locale}/pets`,
+        name: t('category.personal.title'),
+        item: `${process.env.NEXT_PUBLIC_SITE_URL}/${locale}/personal`,
       },
     ],
   });
@@ -48,23 +48,24 @@ export default function PetsPage({ params: { locale } }: { params: { locale: str
               {t('nav.home')}
             </Link>
             {' / '}
-            {t('category.pets.title')}
+            {t('category.personal.title')}
           </nav>
 
           <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
-            {t('category.pets.title')}
+            {t('category.personal.title')}
           </h1>
           <p className="mt-2 max-w-2xl text-neutral-600">
-            {t('category.pets.description')}
+            {t('category.personal.description')}
           </p>
 
           <div className="mt-8 rounded-xl border border-neutral-200 p-6">
-            <button
-              className="rounded-lg bg-neutral-900 px-4 py-2 text-white disabled:opacity-60"
-              disabled
+            <p className="text-neutral-600 mb-4">{t('page.personal.content')}</p>
+            <Link
+              href={`/${locale}/personal/assessment`}
+              className="inline-block rounded-lg bg-neutral-900 px-4 py-2 text-white hover:bg-neutral-800 transition-colors"
             >
-              {locale === 'zh' ? '评估（即将推出）' : 'Assessment (coming soon)'}
-            </button>
+              {t('assessment.title')}
+            </Link>
           </div>
         </div>
       </main>

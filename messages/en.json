@@ -13,29 +13,25 @@
     "subtitle": "Discover solutions for every aspect of your life"
   },
   "category": {
-    "kids": {
-      "title": "Kids",
-      "subtitle": "Emotional growth for children",
-      "description": "Building emotional intelligence from an early age",
-      "emoji": "👶"
-    },
-    "pets": {
-      "title": "Pets",
-      "subtitle": "Understanding your companions",
-      "description": "Deepening bonds through emotional awareness",
-      "emoji": "🐾"
-    },
-    "self": {
-      "title": "Self",
-      "subtitle": "Personal development",
-      "description": "Enhancing your emotional well-being",
-      "emoji": "🧘"
-    },
     "work": {
       "title": "Work",
       "subtitle": "Professional emotional intelligence",
-      "description": "Leading with empathy and awareness",
-      "emoji": "💼"
+      "description": "Leading with empathy and awareness"
+    },
+    "personal": {
+      "title": "Personal",
+      "subtitle": "Personal development",
+      "description": "Enhancing your emotional well-being"
+    },
+    "kid": {
+      "title": "Kid",
+      "subtitle": "Emotional growth for children",
+      "description": "Building emotional intelligence from an early age"
+    },
+    "pet": {
+      "title": "Pet",
+      "subtitle": "Understanding your companions",
+      "description": "Deepening bonds through emotional awareness"
     }
   },
   "button": {
@@ -46,34 +42,31 @@
     "copyright": "© 2024 EQAIGlobal. All rights reserved."
   },
   "page": {
-    "kids": {
-      "title": "For Kids",
-      "description": "Creating safe and educational experiences for children",
-      "content1": "Our platform provides carefully curated educational content designed to help children learn and grow in a safe digital environment.",
-      "content2": "We focus on age-appropriate materials that promote creativity, critical thinking, and digital literacy while ensuring complete safety and privacy.",
-      "content3": "From interactive learning games to educational videos, we offer resources that make learning fun and engaging for children of all ages."
-    },
-    "self": {
-      "title": "For Yourself",
-      "description": "Tools and resources for personal development and wellness",
-      "content1": "Discover resources designed to help you achieve personal growth, maintain wellness, and improve your overall quality of life.",
-      "content2": "Our curated collection includes mindfulness practices, productivity tools, and lifestyle guidance tailored to your individual needs.",
-      "content3": "Whether you're looking to build new habits, learn new skills, or simply find balance in your daily routine, we have the tools to support your journey."
-    },
     "work": {
-      "title": "For Work",
-      "description": "Professional tools and resources for modern workplace",
-      "content1": "Enhance your professional capabilities with our comprehensive collection of work-focused tools and resources.",
-      "content2": "From remote collaboration tools to productivity frameworks, we provide everything you need to excel in today's dynamic work environment.",
-      "content3": "Stay ahead of industry trends and develop the skills necessary for career advancement in an increasingly digital workplace."
+      "title": "Work",
+      "description": "Professional emotional intelligence assessment",
+      "content": "Understand and enhance your emotional intelligence in the workplace."
     },
-    "pets": {
-      "title": "For Pets",
-      "description": "Comprehensive care guides for your beloved companions",
-      "content1": "Your pets deserve the best care possible. Our platform offers expert guidance on pet health, nutrition, and general wellbeing.",
-      "content2": "From training tips to health monitoring, we provide practical advice to help you build a stronger bond with your furry friends.",
-      "content3": "Whether you're a new pet owner or an experienced caregiver, our resources will help you provide the love and care your pets deserve."
+    "personal": {
+      "title": "Personal",
+      "description": "Personal development assessment",
+      "content": "Discover tools and insights for your personal growth journey."
+    },
+    "kid": {
+      "title": "Kid",
+      "description": "Child emotional intelligence assessment",
+      "content": "Help your child develop emotional awareness and intelligence."
+    },
+    "pet": {
+      "title": "Pet",
+      "description": "Pet emotional wellness assessment",
+      "content": "Better understand and care for your pet's emotional needs."
     }
+  },
+  "assessment": {
+    "title": "Assessment",
+    "coming_soon": "Coming soon",
+    "description": "This assessment will help you gain insights and personalized recommendations."
   },
   "meta": {
     "keywords": {

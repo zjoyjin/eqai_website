@@ -5,7 +5,12 @@
 
 ## 🌐 Overview
 
-A bilingual (English/中文) Next.js website focused on emotional intelligence and AI, featuring content for kids, personal development, work productivity, and pet care.
+A minimal, professional bilingual (English/中文) Next.js 14 website with Google-style simplicity. Features emotional intelligence assessments for four life areas:
+
+- **Work** - Professional emotional intelligence
+- **Personal** - Personal development
+- **Kid** - Child emotional growth
+- **Pet** - Pet emotional wellness
 
 ## 🏗️ Architecture
 
@@ -48,11 +53,19 @@ eqai_website/
 ├── app/
 │   ├── [locale]/           # Locale-specific routes
 │   │   ├── layout.tsx      # Locale layout with i18n, SEO, JSON-LD
-│   │   ├── page.tsx        # Homepage
-│   │   ├── kids/           # Kids category
-│   │   ├── self/           # Self-development category
-│   │   ├── work/           # Work productivity category
-│   │   └── pets/           # Pet care category
+│   │   ├── page.tsx        # Homepage with 4 category cards
+│   │   ├── work/           # Work: Professional EQ assessment
+│   │   │   ├── page.tsx    # Work category page
+│   │   │   └── assessment/ # Work assessment (placeholder)
+│   │   ├── personal/       # Personal: Personal development assessment
+│   │   │   ├── page.tsx    # Personal category page
+│   │   │   └── assessment/ # Personal assessment (placeholder)
+│   │   ├── kid/            # Kid: Child EQ assessment
+│   │   │   ├── page.tsx    # Kid category page
+│   │   │   └── assessment/ # Kid assessment (placeholder)
+│   │   └── pet/            # Pet: Pet emotional wellness assessment
+│   │       ├── page.tsx    # Pet category page
+│   │       └── assessment/ # Pet assessment (placeholder)
 │   ├── sitemap.ts          # Dynamic sitemap generation
 │   └── globals.css         # Global styles with CSS variables
 ├── components/
@@ -184,19 +197,55 @@ NEXT_PUBLIC_PLAUSIBLE_DOMAIN=eqaiglobal.com
 NEXT_PUBLIC_SENTRY_DSN=your_sentry_dsn
 ```
 
-## 🚀 Deployment
+## 🚀 Deployment to Vercel
 
-### Vercel (Recommended)
-1. Push to GitHub
-2. Import project in Vercel
-3. Set environment variables
-4. Deploy!
+This project is optimized for Vercel with **zero configuration needed**.
 
-### Manual
+### Option 1: Deploy via Vercel CLI (Recommended)
 ```bash
-npm run build
-npm start
+# Install Vercel CLI globally
+npm install -g vercel
+
+# Deploy to production
+vercel --prod
 ```
+
+### Option 2: Deploy via Vercel Dashboard
+1. Push your code to GitHub
+2. Go to [vercel.com](https://vercel.com)
+3. Click "Import Project"
+4. Select your GitHub repository
+5. Vercel auto-detects Next.js - click "Deploy"
+6. Done! Your site is live at `https://your-project.vercel.app`
+
+### Option 3: Deploy via GitHub Integration
+1. Connect your GitHub repository to Vercel
+2. Every push to `main` automatically deploys
+3. Pull requests get preview deployments
+
+### Environment Variables (Optional)
+If you're using Sanity CMS or analytics, add these in Vercel Dashboard → Settings → Environment Variables:
+
+```env
+NEXT_PUBLIC_SITE_URL=https://your-domain.vercel.app
+NEXT_PUBLIC_SANITY_PROJECT_ID=your_project_id
+NEXT_PUBLIC_SANITY_DATASET=production
+```
+
+### Custom Domain (Optional)
+1. In Vercel Dashboard → Settings → Domains
+2. Add your custom domain (e.g., `eqaiglobal.com`)
+3. Update DNS records as instructed
+4. SSL certificate is automatically provisioned
+
+### Build Configuration
+Vercel automatically uses these settings:
+- **Build Command**: `npm run build`
+- **Output Directory**: `.next`
+- **Install Command**: `npm install`
+- **Framework**: Next.js (auto-detected)
+
+No additional configuration needed!
 
 ## 📚 Documentation
 

@@ -20,28 +20,28 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
 
   const categories = [
     {
-      key: 'kids',
-      href: `/${locale}/kids`,
-      title: t('category.kids.title'),
-      subtitle: t('category.kids.subtitle'),
-    },
-    {
-      key: 'pets',
-      href: `/${locale}/pets`,
-      title: t('category.pets.title'),
-      subtitle: t('category.pets.subtitle'),
-    },
-    {
-      key: 'self',
-      href: `/${locale}/self`,
-      title: t('category.self.title'),
-      subtitle: t('category.self.subtitle'),
-    },
-    {
       key: 'work',
       href: `/${locale}/work`,
       title: t('category.work.title'),
       subtitle: t('category.work.subtitle'),
+    },
+    {
+      key: 'personal',
+      href: `/${locale}/personal`,
+      title: t('category.personal.title'),
+      subtitle: t('category.personal.subtitle'),
+    },
+    {
+      key: 'kid',
+      href: `/${locale}/kid`,
+      title: t('category.kid.title'),
+      subtitle: t('category.kid.subtitle'),
+    },
+    {
+      key: 'pet',
+      href: `/${locale}/pet`,
+      title: t('category.pet.title'),
+      subtitle: t('category.pet.subtitle'),
     },
   ];
 
@@ -79,28 +79,28 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
           <div className="mx-auto max-w-4xl">
             <CategoryGrid>
               <CategoryCard
-                href={`/${locale}/kids`}
-                title={t('category.kids.title')}
-                description={t('category.kids.subtitle')}
-                icon={<Baby aria-hidden="true" className="h-5 w-5" />}
-              />
-              <CategoryCard
-                href={`/${locale}/pets`}
-                title={t('category.pets.title')}
-                description={t('category.pets.subtitle')}
-                icon={<PawPrint aria-hidden="true" className="h-5 w-5" />}
-              />
-              <CategoryCard
-                href={`/${locale}/self`}
-                title={t('category.self.title')}
-                description={t('category.self.subtitle')}
-                icon={<UserRound aria-hidden="true" className="h-5 w-5" />}
-              />
-              <CategoryCard
                 href={`/${locale}/work`}
                 title={t('category.work.title')}
                 description={t('category.work.subtitle')}
                 icon={<BriefcaseBusiness aria-hidden="true" className="h-5 w-5" />}
+              />
+              <CategoryCard
+                href={`/${locale}/personal`}
+                title={t('category.personal.title')}
+                description={t('category.personal.subtitle')}
+                icon={<UserRound aria-hidden="true" className="h-5 w-5" />}
+              />
+              <CategoryCard
+                href={`/${locale}/kid`}
+                title={t('category.kid.title')}
+                description={t('category.kid.subtitle')}
+                icon={<Baby aria-hidden="true" className="h-5 w-5" />}
+              />
+              <CategoryCard
+                href={`/${locale}/pet`}
+                title={t('category.pet.title')}
+                description={t('category.pet.subtitle')}
+                icon={<PawPrint aria-hidden="true" className="h-5 w-5" />}
               />
             </CategoryGrid>
           </div>
