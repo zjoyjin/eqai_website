@@ -3,7 +3,6 @@ import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server
 import { notFound } from 'next/navigation';
 import { Inter } from 'next/font/google';
 import { locales } from '@/i18n/request';
-import '../globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { generateJsonLd } from '@/lib/utils';
